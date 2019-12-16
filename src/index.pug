@@ -1,0 +1,30 @@
+include bemto/bemto.pug
+include _partials/header.pug
+include _partials/normotive_arr.pug
+include _partials/main_screen.pug
+include _partials/about_trainings.pug
+include _partials/normative.pug
+include _partials/inventory.pug
+include _partials/footer.pug
+doctype html 
+html
+	head
+		title KOLESOV
+		link(rel="stylesheet" type="text/css" href="css/all_style.css")
+		link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css")
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+	body
+		+header
+		+main_screen
+		+about_trainings
+		+normative
+		+inventory
+		+footer
+
+
+		
+		script(src="//cdnjs.cloudflare.com/ajax/libs/wow/0.1.12/wow.min.js")
+		script new WOW().init();
+		script(type="text/javascript" src="js/all_libs.js")
+		script(type="text/javascript" src="js/all_js.js")

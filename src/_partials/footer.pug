@@ -1,0 +1,35 @@
+mixin footer
+	+b.FOOTER.footer.indent
+		+e.nav
+			+e.sections.common
+				h4 Разделы
+				a(href="#") Главная
+				a(href="#") Занятия
+				a(href="#") Сдача нормативов
+				a(href="#") Инвентарь
+				a(href="#") Контакты
+			+e.normative.common
+				h4 Нормативы
+				a(href="#") БH (Begleithund или Собака-компаньон)
+				a(href="#") ОКД (общий курс дрессировки)
+				a(href="#") ЗКС(защитно-караульная служба)
+				a(href="#") Караульная служба (КС)
+				a(href="#") Обидиенс
+				a(href="#") ИПО (IPO)
+				a(href="#") Мондьоринг
+				a(href="#") Большой ринг (БР)
+			+e.trainings.common
+				h4 Виды тренировок
+				a(href="#") Групповые тренировки
+				a(href="#") Индивидуальные тренировки
+				a(href="#") Спортивные тренировки
+			+e.social.common
+				a(href="https://www.instagram.com/aleksandr.kolesov/?hl=uk" target="-blanc")
+					img(src="img/instagram.svg", alt="instagram-icon")
+				a(href="https://www.facebook.com/profile.php?id=100009184427392" target="-blanc")
+					img(src="img/facebook.svg", alt="facebook-icon")
+				a(href="#" target="-blanc")
+					img(src="img/telegram.svg", alt="telegram-icon")
+		+b.final
+			hr.del-white
+			p &copy; 2019 ЦИПВС "Кантор". Все права защищены
