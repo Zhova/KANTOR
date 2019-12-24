@@ -1,5 +1,13 @@
 *, *:after, *:before
 	box-sizing: border-box
+.cross
+	width: 40px
+	height: 40px
+	position: absolute
+	right: 40px
+	top: 20px
+	cursor: pointer
+	z-index: 11
 
 .title__img
 	width: 60px
@@ -60,7 +68,7 @@ header
 	align-items: center
 
 	&__text
-		font-family: 'title';
+		font-family: 'title'
 		font-size: 11px
 		margin-top: -20px
 		color: #5d0080
@@ -127,7 +135,7 @@ hr
 		margin-bottom: 20px
 		opacity: 0.8
 
-.training
+.kindsTrain
 	display: flex
 	justify-content: space-around
 	flex-direction: column
@@ -173,6 +181,7 @@ hr
 
 	&__type
 		width: 30%
+		height: 525px
 		max-height: 600px
 		background-color: white
 		font-family: 'title'
@@ -198,6 +207,60 @@ hr
 			padding: 0px 20px 20px 20px
 			display: block
 			font-family: 'main'
+			position: absolute
+			bottom: 0
+
+	.fullinfo
+		display: none
+		position: fixed
+		background-color: rgba(255, 255, 255, .5)
+		width: 100vw
+		height: 100vh
+		z-index: 10
+		top: 0
+		left: 0
+		justify-content: center
+		align-items: center
+
+		&__text
+			height: 70%
+			overflow-y: scroll
+
+		&__content
+			padding: 10px
+			background-color: #fff
+			width: 40%
+			height: 90%
+			margin: 0
+			position: absolute
+			top: 50%
+			left: 50%
+			margin-right: -50%
+			transform: translate(-50%, -50%)
+			box-shadow: 0px 0px 100px 20px rgba(0,0,0,0.5)
+			
+			form
+				display: flex
+				flex-direction: column
+				position: absolute
+				width: 96%
+				bottom: 10px
+			
+			input
+				height: 35px
+				border: 1px solid #5d0080
+				border-radius: 5px
+				padding-left: 10px
+				margin-bottom: 10px
+
+			button
+				height: 50px
+				background-color: limegreen
+				border-radius: 5px
+				border: 0
+				box-shadow: none
+				cursor: pointer
+
 
 .pictures2
 	background-image: url(../img/picturies2.jpg)
@@ -270,8 +333,31 @@ hr
 		align-items: center
 		position: absolute
 
-.fullinfo
-	display: none
+	.fullinfo
+		background-color: rgba(255, 255, 255, .9)
+		display: none
+		position: fixed
+		z-index: 10
+		width: 100vw
+		height: 100vh
+		top: 0
+		left: 0
+
+		&__content
+			display: flex
+			justify-content: center
+			align-items: center
+			flex-direction: column
+			height: 100vh
+
+		&__title
+			font-size: 30px
+			font-weight: 900
+
+		&__text
+			width: 80%
+			line-height: 1.4
+			font-size: 18px
 
 .content
 	margin-bottom: 5px

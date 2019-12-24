@@ -11,6 +11,9 @@ const gulp = require('gulp'),
 		babel = require('gulp-babel');
 
 
+const php = [
+	'./src/send.php'
+];
 
 const cssFiles = [
 	'./node_modules/normalize.css/normalize.css',
@@ -39,6 +42,12 @@ function Html() {
 				.pipe(pug({
 					pretty: true
 				}))
+				.pipe(gulp.dest('./build'))
+				.pipe(browserSync.stream());
+}
+
+function Php() {
+	return gulp.src(php)
 				.pipe(gulp.dest('./build'))
 				.pipe(browserSync.stream());
 }
@@ -107,12 +116,13 @@ function Clean() {
 
 
 gulp.task('Html', Html);
+gulp.task('Php', Php);
 gulp.task('Styles', Styles);
 gulp.task('Script', Script);
 gulp.task('Libs', Libs);
 gulp.task('Watch', Watch);
 
 gulp.task('build', gulp.series(Clean, 
-							gulp.parallel(Styles, Script, Html, Libs, ImgMIn))
+							gulp.parallel(Styles, Script, Html, Libs, ImgMIn, Php))
 						);
 gulp.task('dev', gulp.series('build', Watch));

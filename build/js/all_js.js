@@ -7,21 +7,39 @@ $(function () {
     $('.more__line:nth-child(3)').toggleClass('line-rotate-second');
     $('.more__line:nth-child(2)').toggle();
   });
-  var $normItem = $('.norm-item');
-  $normItem.on('click', function (event) {
-    $(event.currentTarget).next().fadeIn();
+  $('.contmenu a').on('click', function () {
+    $('.contmenu').slideUp(300);
+    $('.more__line:nth-child(1)').toggleClass('line-rotate-first');
+    $('.more__line:nth-child(3)').toggleClass('line-rotate-second');
+    $('.more__line:nth-child(2)').toggle();
   });
-  var $crossHide = $('.full-info_cross');
-  $crossHide.on('click', function () {
-    $('.fullinfo-hide').fadeOut();
-    console.log('unvivsible');
-  });
-  var $trainTypeHiden = $('.train-type__hiden');
-  var $trainType = $('.train-type span');
+  var $crossHide = $('.cross');
+  var $fullinfo = $('.fullinfo');
+  var $trainType = $('.trainings__type span');
   $trainType.on('click', function () {
     $(event.currentTarget).next().fadeIn();
   });
   $crossHide.on('click', function () {
-    $trainTypeHiden.fadeOut();
+    $fullinfo.fadeOut();
   });
-}); // nth-child(2)
+  var $normItem = $('.normative__item');
+  $normItem.on('click', function (event) {
+    $(event.currentTarget).next().fadeIn();
+  });
+  $crossHide.on('click', function () {
+    $('.fullinfo-hide').fadeOut();
+  });
+  $('.form button').on('click', function () {
+    var form_data = $(event.currentTarget).serialize();
+    $.ajax({
+      type: "POST",
+      //Метод отправки
+      url: "../send.php",
+      //путь до php фаила отправителя
+      data: form_data,
+      success: function success() {
+        alert("Ваше сообщение отпрвлено!");
+      }
+    });
+  });
+});

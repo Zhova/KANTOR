@@ -17,7 +17,7 @@ mixin normative
 						+e.text
 							h3= item.name
 					+b.fullinfo
-						+e.P.title= item.name
-						+e.P.text= item.fullInfo
-						+e.cross
-							img(src="img/cross.svg")
+						+e.content
+							+e.P.title= item.name
+							+e.P.text= item.fullInfo
+								img(src="img/cross.svg").cross

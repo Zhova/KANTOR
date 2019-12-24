@@ -4,17 +4,6 @@
 // @media screen and (min-width: 1800px)
 // 	body
 // 		background-color: #880
-
-
-
-// // =============== tablet 
-
-// @media screen and (max-width: 1199px)
-
-
-
-
-
 // =============== mobile
 
 @media screen and (max-width: 767px)
@@ -24,6 +13,13 @@
 
 	.indent
 		padding: 20px 10px
+
+	.cross
+		width: 20px
+		height: 20px
+		right: 15px
+		top: 15px
+
 
 	header
 		box-sizing: border-box
@@ -145,14 +141,48 @@
 		&__type
 			width: 100%
 			margin-bottom: 10px
+			height: auto
+
+			span
+				position: static
+				bottom: auto
+		.fullinfo
+			&__content
+				width: 100vw
+				height: 100vh
+
+				input
+					height: 70px
+
+			&__text
+				height: 410px
+				overflow-y: scroll
+
+				h3
+					margin-top: 25px
 
 	.pictures2
 		display: none
 
-	.normative__item
+	.normative
+		&__item
 			width: 49%
 			height: 200px
-			
+
+		.fullinfo
+			&__content
+				height: auto
+				
+			&__title
+				margin-top: 40px
+				font-size: 18px	
+				text-align: center	
+
+			&__text
+				height: 450px
+				font-size: 16px
+				overflow-y: scroll
+
 	.inventory
 		&__title
 			margin-right: 0
@@ -186,3 +216,131 @@
 	.final p
 		font-size: 12px
 
+
+
+
+
+
+// =============== tablet 
+
+@media screen and (max-width: 1199px) and (min-width: 375px)
+	*, *:after, *:before
+		box-sizing: border-box
+
+	.indent
+		padding: 20px 10px
+
+	header
+		box-sizing: border-box
+		height: 80px
+
+	.more
+		position: absolute
+		right: 20px
+
+		&__line
+			height: 2px
+			width: 20px
+			background-color: #000
+			margin-bottom: 3px
+			transition: all 0.5s
+			transform-origin: 33%
+
+	
+	.line-hide
+		visibility: hidden
+
+	.line-rotate
+		transition: all 0.5s
+
+		&-first
+			transform: rotate(45deg)
+
+		&-second
+			transform: rotate(-45deg)
+
+	.logo
+		position: absolute
+		display: flex
+		justify-content: center
+
+		&__img
+			width: 60px
+			height: 60px
+
+		&__text
+			font-size: 12px
+
+	.contmenu
+		height: 50vh
+		top: 80px
+		display: none
+		position: absolute
+		background: white
+		flex-direction: column
+		width: 100%
+		
+		&__menu
+			line-height: 4
+			flex-direction: column
+
+			a
+				font-size: 20px
+
+	.cont
+		background-position-x: -590px
+		height: 100vh
+
+		&__title-main h1
+				font-size: 40px
+				line-height: 1.8
+				max-width: 100%
+
+				&:first-child
+					max-width: 75%
+
+	.trainings
+		margin-bottom: 0
+
+		&__types
+			justify-content: center
+			flex-direction: column
+			align-items: center
+
+		&__type
+			width: 90%
+			margin-bottom: 30px
+			
+
+	.normative
+		&__items
+			justify-content: space-around
+
+		&__item
+			width: 45%
+
+	.inventory
+		&__item
+			margin-bottom: 50px
+
+		&__content
+			margin-bottom: 0
+
+	.footer
+		&__nav
+			justify-content: flex-end
+			margin-bottom: 0
+
+		&__sections,
+		&__normative,
+		&__trainings
+			display: none
+
+		&__social
+			width: 180px
+			display: flex
+			justify-content: space-around
+			flex-direction: row
+
+	.final p
+		font-size: 12px
