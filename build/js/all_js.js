@@ -1,5 +1,7 @@
 "use strict";
 
+var _this = void 0;
+
 $(function () {
   $('.more').on('click', function () {
     $('.contmenu').slideToggle(300);
@@ -28,14 +30,13 @@ $(function () {
   });
   $crossHide.on('click', function () {
     $('.fullinfo-hide').fadeOut();
-  });
-  $('.form button').on('click', function () {
-    var form_data = $(event.currentTarget).serialize();
+  }); //send form
+
+  $('.form').submit(function () {
+    var form_data = $(_this).serialize();
     $.ajax({
       type: "POST",
-      //Метод отправки
-      url: "../send.php",
-      //путь до php фаила отправителя
+      url: "send.php",
       data: form_data,
       success: function success() {
         alert("Ваше сообщение отпрвлено!");

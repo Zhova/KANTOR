@@ -36,11 +36,13 @@ $(() => {
 		$('.fullinfo-hide').fadeOut();
 	});
 
-	$('.form button').on('click', () => { 
-		let form_data = $(event.currentTarget).serialize();
+	
+//send form
+	$('.form').submit(() => { 
+		let form_data = $(this).serialize();
 		$.ajax({
-		type: "POST", //Метод отправки
-		url: "../send.php", //путь до php фаила отправителя
+		type: "POST",
+		url: "send.php",
 		data: form_data,
 		success: function() {
 			alert("Ваше сообщение отпрвлено!");

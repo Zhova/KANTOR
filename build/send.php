@@ -1,7 +1,3 @@
-
-
-
-
 <?
 if((isset($_POST['question'])&&$_POST['question']!="")){
         $to = 'zhova24@gmail.com';
